@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c779b5594f52e49b3cb032bf7aabbb, type: 3}
+  m_Name: WeedProto
+  m_EditorClassIdentifier: 
+  id: 1
+  UIColor: {r: 0.49942148, g: 0.8207547, b: 0.520361, a: 1}
+  prefab: {fileID: 2039632796342080758, guid: 030eaba911cde2a4ea27a7704fc5351c, type: 3}
+  seed: {fileID: 21300000, guid: 268bf1ff6f13fb24393f97f3b39e850b, type: 3}
+  leaf: {fileID: 21300000, guid: d8e8dfbe2f91e4544a08838c7ff03862, type: 3}
+  bloom: {fileID: 21300000, guid: 0f543023c7630a542828577f6e936d2e, type: 3}
+  mask: {fileID: 0}
+  spreadRate: 1
+  spreadChance: 0.5
+  growthSpeed: 2
+  growthRequirements: 

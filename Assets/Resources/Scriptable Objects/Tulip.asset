@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c779b5594f52e49b3cb032bf7aabbb, type: 3}
+  m_Name: Tulip
+  m_EditorClassIdentifier: 
+  id: 0
+  UIColor: {r: 0.8509804, g: 0.6510867, b: 0.5411765, a: 1}
+  prefab: {fileID: 339382057394185308, guid: 16a5e38c4b4ada846abc73a659a9654e, type: 3}
+  seed: {fileID: 21300000, guid: 5aed292c03b1c6645a05c7f0d8581d1c, type: 3}
+  leaf: {fileID: 21300000, guid: 7f060d8cfee3e49418768592485056aa, type: 3}
+  bloom: {fileID: 21300000, guid: eceb899f0dcd9b246bcf94a672d0cba9, type: 3}
+  mask: {fileID: 2800000, guid: 33f5dd67e5ab0e04b82a40c2b1dbdff7, type: 3}
+  spreadRate: 4
+  spreadChance: 0.5
+  growthSpeed: 3
+  growthRequirements: 01000000

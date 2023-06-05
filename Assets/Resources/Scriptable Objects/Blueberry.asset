@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c779b5594f52e49b3cb032bf7aabbb, type: 3}
+  m_Name: Blueberry
+  m_EditorClassIdentifier: 
+  id: 2
+  UIColor: {r: 0.25988218, g: 0.18823528, b: 0.5568628, a: 1}
+  prefab: {fileID: 339382057394185308, guid: 16a5e38c4b4ada846abc73a659a9654e, type: 3}
+  seed: {fileID: 21300000, guid: e3361ffaf0d685643932aacd53cfaaff, type: 3}
+  leaf: {fileID: 21300000, guid: 8e4c7f44221d50f4883a45b20ed34267, type: 3}
+  bloom: {fileID: 21300000, guid: 9f869b88583474647af24d59f4784fa4, type: 3}
+  mask: {fileID: 0}
+  spreadRate: 4
+  spreadChance: 0.4
+  growthSpeed: 2
+  growthRequirements: 
