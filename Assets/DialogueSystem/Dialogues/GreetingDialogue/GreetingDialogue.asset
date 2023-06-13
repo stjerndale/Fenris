@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd8e5781bbef6f4ea5f582637c75245, type: 3}
+  m_Name: GreetingDialogue
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: GreetingDialogue
+  <DialogueGroups>k__BackingField:
+    list:
+    - Key: {fileID: 11400000, guid: 4d9cd630ad2e9fa4eb7cbfd884b7b39c, type: 2}
+      Value:
+      - {fileID: 11400000, guid: 1b5be387035a3184d89b940bce237860, type: 2}
+      - {fileID: 11400000, guid: 3b1eda4fb8738f042a5d9d185645bea5, type: 2}
+      - {fileID: 11400000, guid: a6c43f862a86c03499a8e0d80d5ec877, type: 2}
+      - {fileID: 11400000, guid: 0714b747fd552de40a62f8759d3477d2, type: 2}
+      - {fileID: 11400000, guid: 3aec83416199d474da44f91ac1dca63d, type: 2}
+  <UngroupedDialogues>k__BackingField: []
