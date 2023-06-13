@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlantSeed()
     {
-        BoxColour boxC = targetTile.GetComponent<BoxColour>();
+        BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
         if (inventory.GetStackSize() > inventory.selectedSeed)
         {
             bool success = boxC.PlantFlower(inventory.GetSelectedStack().flowerInformation);
@@ -97,13 +97,13 @@ public class PlayerController : MonoBehaviour
 
     private void WaterPlant()
     {
-        BoxColour boxC = targetTile.GetComponent<BoxColour>();
+        BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
         boxC.GoWet();
     }
 
     private void DigGround()
     {
-        BoxColour boxC = targetTile.GetComponent<BoxColour>();
+        BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
         boxC.GetDug(transform);
     }
 
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, direction + Vector3.down, out hit, 4f, mask))
         {
-            return hit.collider.gameObject.GetComponent<BoxColour>().passable;
+            return hit.collider.gameObject.GetComponent<BoxLogic>().passable;
         }
         return false;
     }

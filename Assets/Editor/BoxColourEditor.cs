@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(BoxColour)), CanEditMultipleObjects]
+[CustomEditor(typeof(BoxLogic)), CanEditMultipleObjects]
 public class BoxColourEditor : Editor
 {
 
@@ -11,7 +11,7 @@ public class BoxColourEditor : Editor
     {
         DrawDefaultInspector();
 
-        BoxColour box = (BoxColour)target;
+        BoxLogic box = (BoxLogic)target;
 
         if (GUILayout.Button("Become Water"))
         {
@@ -19,7 +19,7 @@ public class BoxColourEditor : Editor
         }
         if (GUILayout.Button("Become Ground"))
         {
-            box.SetActiveType(BoxColour.Type.Ground);
+            box.SetActiveType(BoxLogic.Type.Ground);
         }
     }
 

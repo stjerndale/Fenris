@@ -26,14 +26,14 @@ public class GridHandler : MonoBehaviour
     public void SaveMap(SaveToJson saver)
     {
         Transform[] children = new Transform[transform.childCount];
-        BoxColour.Type[] types = new BoxColour.Type[children.Length];
+        BoxLogic.Type[] types = new BoxLogic.Type[children.Length];
         bool[] dryness = new bool[children.Length];
         Flower[] plants = new Flower[children.Length];
 
-        BoxColour box;
+        BoxLogic box;
         for (int i = 0; transform.childCount > i; i++)
         {
-            box = transform.GetChild(i).GetComponent<BoxColour>();
+            box = transform.GetChild(i).GetComponent<BoxLogic>();
             types[i] = box.GetActiveType();
             dryness[i] = box.isDry();
             if(box.GetPlant()  != null)
@@ -53,21 +53,21 @@ public class GridHandler : MonoBehaviour
         stats[2] = 0;
         stats[3] = 0;
         stats[4] = 0;
-        BoxColour.Type type;
+        BoxLogic.Type type;
         foreach (Transform box in transform) {
-            type = box.GetComponent<BoxColour>().GetActiveType();
-            if(type == BoxColour.Type.Ground || type == BoxColour.Type.LowGround)
+            type = box.GetComponent<BoxLogic>().GetActiveType();
+            if(type == BoxLogic.Type.Ground || type == BoxLogic.Type.LowGround)
             {
-                if (box.GetComponent<BoxColour>().GetPlant() == null)
+                if (box.GetComponent<BoxLogic>().GetPlant() == null)
                 {
                     stats[0]++;
                 }
                 else
                 {
-                    Flower.State state = box.GetComponent<BoxColour>().GetPlant().GetComponent<Flower>().GetState();
+                    Flower.State state = box.GetComponent<BoxLogic>().GetPlant().GetComponent<Flower>().GetState();
                     if (state.Equals(Flower.State.Growing))
                     {
-                        state = box.GetComponent<BoxColour>().GetPlant().GetComponent<Flower>().GetPreviousState();
+                        state = box.GetComponent<BoxLogic>().GetPlant().GetComponent<Flower>().GetPreviousState();
                     }
                     if (state.Equals(Flower.State.Seed))
                     {
@@ -83,7 +83,7 @@ public class GridHandler : MonoBehaviour
                     }
                 }
             }
-            else if (type == BoxColour.Type.Water)
+            else if (type == BoxLogic.Type.Water)
             {
                 stats[1]++;
             }
@@ -97,7 +97,7 @@ public class GridHandler : MonoBehaviour
 
     public Transform[] GetNeighbours(Transform box)
     {
-        BoxColour boxC = box.GetComponent<BoxColour>();
+        BoxLogic boxC = box.GetComponent<BoxLogic>();
         int[] coordinates = boxC.GetCoordinates();
 
         int index = coordinates[1] + coordinates[0] * rows;

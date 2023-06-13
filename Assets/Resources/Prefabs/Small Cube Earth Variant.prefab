@@ -13,12 +13,16 @@ PrefabInstance:
       value: Small Cube Earth Variant
       objectReference: {fileID: 0}
     - target: {fileID: 621203998655786980, guid: fcdc767009f353842b362b4b6f30d8cc, type: 3}
+      propertyPath: passable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 621203998655786980, guid: fcdc767009f353842b362b4b6f30d8cc, type: 3}
       propertyPath: mats.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f32cf90024eea44499f9adef1f240e1a, type: 2}
     - target: {fileID: 621203998655786981, guid: fcdc767009f353842b362b4b6f30d8cc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 621203998655786981, guid: fcdc767009f353842b362b4b6f30d8cc, type: 3}
       propertyPath: m_LocalRotation.w

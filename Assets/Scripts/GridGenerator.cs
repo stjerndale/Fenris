@@ -23,7 +23,7 @@ public class GridGenerator : MonoBehaviour
                 GameObject newCube = Instantiate(cube); //Creates an instance of the 'cube' object, think of this like a copy.
                 newCube.transform.parent = transform;
                 newCube.transform.localPosition = new Vector3(x * cubeXLength, 0, z * cubeZLength); //Places the cube on the x and z which is updated in the for loops
-                newCube.GetComponent<BoxColour>().SetCoordinates(x, z);
+                newCube.GetComponent<BoxLogic>().SetCoordinates(x, z);
             }
         }
     }

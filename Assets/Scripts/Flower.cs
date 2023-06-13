@@ -17,7 +17,7 @@ public class Flower : MonoBehaviour
     }
 
     protected FlowerRender[] renders;
-    protected BoxColour box;
+    protected BoxLogic box;
     protected Renderer shadow;
 
     [SerializeField]
@@ -64,7 +64,7 @@ public class Flower : MonoBehaviour
 
     public void SetParentBox()
     {
-        box = transform.parent.GetComponent<BoxColour>();
+        box = transform.parent.GetComponent<BoxLogic>();
     }
 
     public State GetState()
@@ -177,14 +177,14 @@ public class Flower : MonoBehaviour
                 Transform spreadBox = box.GetRandomEligibleNeighbour(this);
                 if(spreadBox != null)
                 {
-                    spreadBox.GetComponent<BoxColour>().PlantFlower(flowerInfo);
+                    spreadBox.GetComponent<BoxLogic>().PlantFlower(flowerInfo);
                 }
             }
         }
 
     }
 
-    public bool GrowthRequirementsFulfilled(BoxColour boxToCheck)
+    public bool GrowthRequirementsFulfilled(BoxLogic boxToCheck)
     {
         if (requirements.Contains(FlowerInformation.Requirements.NearWater))
         {

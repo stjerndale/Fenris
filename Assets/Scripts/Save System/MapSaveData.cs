@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class MapSaveData
 {
-    public BoxColour.Type[] tileTypes;
+    public BoxLogic.Type[] tileTypes;
 
     public bool[] tilesDryness;
 

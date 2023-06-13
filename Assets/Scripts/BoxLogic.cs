@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 [ExecuteAlways]
-public class BoxColour : MonoBehaviour
+public class BoxLogic : MonoBehaviour
 {
 
     public enum Type
@@ -19,6 +20,7 @@ public class BoxColour : MonoBehaviour
 
     Renderer render;
     GridHandler gridHandler;
+    //BoxStyle boxStyle;
 
     [SerializeField]
     Material[] mats;
@@ -51,6 +53,7 @@ public class BoxColour : MonoBehaviour
         changing = false;
         render = GetComponent<MeshRenderer>();
         gridHandler = transform.parent.GetComponent<GridHandler>();
+        //boxStyle = GetComponent<BoxStyle>();
 
         UpdateMaterial();
         StartCoroutine(SetUpNeighbours());
@@ -222,13 +225,13 @@ public class BoxColour : MonoBehaviour
         {
             if (n != null)
             {
-                BoxColour box = n.GetComponent<BoxColour>();
+                BoxLogic box = n.GetComponent<BoxLogic>();
                 if (box.GetActiveType() == Type.LowGround && box.IsDirectlyWaterAdjecent() && !box.changing) // if a neighbour is low ground, spread the water there
                 {
                     box.changing = true;
                     box.Invoke("BecomeWater", 0.3f);
                 }
-                n.GetComponent<BoxColour>().GoWet();
+                n.GetComponent<BoxLogic>().GoWet();
             }
         }
     }
@@ -311,6 +314,8 @@ public class BoxColour : MonoBehaviour
             transform.localPosition += Vector3.up * transform.localScale.y / 4f;
         }
 
+
+        //boxStyle.UpdateTileStyle();
     }
 
     public void SetCoordinates(int x, int z)
@@ -354,7 +359,7 @@ public class BoxColour : MonoBehaviour
         while (neighs.Count > 0)
         {
             index = Mathf.RoundToInt(Random.Range(0f, neighs.Count - 1));
-            BoxColour box = neighs[index].GetComponent<BoxColour>();
+            BoxLogic box = neighs[index].GetComponent<BoxLogic>();
 
             if (box.isEmpty() && flower.GrowthRequirementsFulfilled(box))
             {
@@ -375,7 +380,7 @@ public class BoxColour : MonoBehaviour
         {
             if (n != null)
             {
-                if(n.GetComponent<BoxColour>().GetActiveType() == Type.Water)
+                if(n.GetComponent<BoxLogic>().GetActiveType() == Type.Water)
                 {
                     return true;
                 }
@@ -392,7 +397,7 @@ public class BoxColour : MonoBehaviour
         {
             if (neighbours[i] != null && i % 2 == 0)
             {
-                if (neighbours[i].GetComponent<BoxColour>().GetActiveType() == Type.Water)
+                if (neighbours[i].GetComponent<BoxLogic>().GetActiveType() == Type.Water)
                 {
                     return true;
                 }
@@ -400,5 +405,10 @@ public class BoxColour : MonoBehaviour
         }
 
         return false;
+    }
+
+    public Transform[] GetNeighbours()
+    {
+        return neighbours;
     }
 }

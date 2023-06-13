@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class SaveToJson
 {
-    public void SaveMapToJson(BoxColour.Type[] types, bool[] dryness, Flower[] plantList)
+    public void SaveMapToJson(BoxLogic.Type[] types, bool[] dryness, Flower[] plantList)
     {
         MapSaveData mapSaveData = new MapSaveData();
         mapSaveData.tileTypes = types;
@@ -25,20 +25,20 @@ public class SaveToJson
     {
         string json = File.ReadAllText(Application.dataPath + "/Save Files/" + SceneManager.GetActiveScene().name + ".json");
         MapSaveData mapSaveData = JsonUtility.FromJson<MapSaveData>(json);
-        BoxColour box = grid.GetChild(0).GetComponent<BoxColour>();
+        BoxLogic box = grid.GetChild(0).GetComponent<BoxLogic>();
         int TimePassed = GameInformation.TimeTicks - mapSaveData.TimeStamp;
 
         // set all the box types (ground, water etc)
         for (int i = 0; i < grid.childCount; i++)
         {
-            box = grid.GetChild(i).GetComponent<BoxColour>();
+            box = grid.GetChild(i).GetComponent<BoxLogic>();
             box.SetActiveType(mapSaveData.tileTypes[i]);
         }
 
         // tile type for all tiles must be set before plant is planted so the growth requirements are checking correctly from the start
         for(int i = 0; i < grid.childCount; i++)
         {
-            box = grid.GetChild(i).GetComponent<BoxColour>();
+            box = grid.GetChild(i).GetComponent<BoxLogic>();
             box.SetDryness(mapSaveData.tilesDryness[i]); // dryness needs to be updated after the water tiles have been correctly placed
 
             if (box.plant != null)
@@ -76,7 +76,7 @@ public class SaveToJson
     }
 
     // Setup a flower based on saved information
-    private void LoadPlantFromSaveData(PlantSaveData plantSaveData, BoxColour box, int TimePassed)
+    private void LoadPlantFromSaveData(PlantSaveData plantSaveData, BoxLogic box, int TimePassed)
     {
         box.AddFlower(plantSaveData.plantInfo);
         Flower plant = box.plant.GetComponent<Flower>();
@@ -91,7 +91,7 @@ public class SaveToJson
     // Setup a flower based on saved information
     // If enough time has passed that the plant should have grown while the player was away, then have it grow
     // Note: should the plants be able to spread off-screen as well?
-    private void LoadPlantFromSaveDataAndGrow(PlantSaveData plantSaveData, BoxColour box, int TimePassed)
+    private void LoadPlantFromSaveDataAndGrow(PlantSaveData plantSaveData, BoxLogic box, int TimePassed)
     {
         box.AddFlower(plantSaveData.plantInfo);
         Flower plant = box.plant.GetComponent<Flower>();
