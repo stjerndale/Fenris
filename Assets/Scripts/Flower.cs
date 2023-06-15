@@ -122,10 +122,11 @@ public class Flower : MonoBehaviour
             else if (previousState == State.Leaf)
             {
                 SetState(State.Bloom);
+                box.gridHandler.UpdatePlantedToBloomed();
             }
         }
 
-        box.UpdateStats();
+        //box.UpdateStats();
     }
 
     virtual public IEnumerator Grow()
@@ -163,7 +164,8 @@ public class Flower : MonoBehaviour
         requirements = flowerInfo.growthRequirements;
         SetState(State.Seed);
         SetParentBox();
-        box.UpdateStats();
+        // box.UpdateStats();
+        box.gridHandler.UpdateGroundToPlanted();
     }
 
     protected virtual IEnumerator SpreadLoop()

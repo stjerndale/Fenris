@@ -50,7 +50,7 @@ public class SaveToJson
                 LoadPlantFromSaveData(mapSaveData.plants[i], box, TimePassed);
             }
         }
-        box.GetComponentInParent<GridHandler>().UpdateStats();
+        box.GetComponentInParent<GridHandler>().UpdateAllStats();
         Debug.Log("Map Loaded");
     }
 

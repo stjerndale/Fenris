@@ -46,13 +46,13 @@ public class GridHandler : MonoBehaviour
         saver.SaveGameInformationToJson();
     }
 
-    public void UpdateStats()
+    public void UpdateAllStats()
     {
-        stats[0] = 0;
-        stats[1] = 0;
-        stats[2] = 0;
-        stats[3] = 0;
-        stats[4] = 0;
+        stats[0] = 0; // ground
+        stats[1] = 0; // water
+        stats[2] = 0; // seeds or leaf
+        stats[3] = 0; // blooms
+        stats[4] = 0; // 
         BoxLogic.Type type;
         foreach (Transform box in transform) {
             type = box.GetComponent<BoxLogic>().GetActiveType();
@@ -69,17 +69,17 @@ public class GridHandler : MonoBehaviour
                     {
                         state = box.GetComponent<BoxLogic>().GetPlant().GetComponent<Flower>().GetPreviousState();
                     }
-                    if (state.Equals(Flower.State.Seed))
+                    if (state.Equals(Flower.State.Seed) || state.Equals(Flower.State.Leaf))
                     {
                         stats[2]++;
                     }
-                    if (state.Equals(Flower.State.Leaf))
+                    /*if (state.Equals(Flower.State.Leaf))
                     {
                         stats[3]++;
-                    }
+                    }*/
                     if (state.Equals(Flower.State.Bloom))
                     {
-                        stats[4]++;
+                        stats[3]++;
                     }
                 }
             }
@@ -104,14 +104,14 @@ public class GridHandler : MonoBehaviour
 
         Transform[] neighbours = new Transform[8];
 
-        neighbours[0] = GetNeighbour(box, index + rows); //north
-        neighbours[1] = GetNeighbour(box, index + rows + 1); //north east
-        neighbours[2] = GetNeighbour(box, index + 1); // east
-        neighbours[3] = GetNeighbour(box, index + 1 - rows); // south east
-        neighbours[4] = GetNeighbour(box, index - rows); //south
+        neighbours[0] = GetNeighbour(box, index + rows); // east
+        neighbours[1] = GetNeighbour(box, index + rows + 1); //north-east
+        neighbours[2] = GetNeighbour(box, index + 1); // north
+        neighbours[3] = GetNeighbour(box, index + 1 - rows); // north-west
+        neighbours[4] = GetNeighbour(box, index - rows); // west
         neighbours[5] = GetNeighbour(box, index - rows - 1); //south west
-        neighbours[6] = GetNeighbour(box, index - 1); // west
-        neighbours[7] = GetNeighbour(box, index - 1 + rows); // north west
+        neighbours[6] = GetNeighbour(box, index - 1); // south
+        neighbours[7] = GetNeighbour(box, index - 1 + rows); // south-east
 
 
         return neighbours;
@@ -127,4 +127,47 @@ public class GridHandler : MonoBehaviour
         return null;
     }
 
+    public float GetPercentage(int index)
+    {
+        int total = transform.childCount;
+        int part = stats[index];
+
+        return (part * 1f) / total;
+    }
+
+    #region Update Single Box Stat Methods
+    public void UpdateGroundToWater()
+    {
+        UpdateStatChange(0, 1);
+    }
+
+    public void UpdateWaterToGround()
+    {
+        UpdateStatChange(1, 0);
+    }
+    public void UpdateGroundToPlanted()
+    {
+        UpdateStatChange(0, 2);
+    }
+
+    public void UpdatePlantedToGround()
+    {
+        UpdateStatChange(2, 0);
+    }
+    public void UpdatePlantedToBloomed()
+    {
+        UpdateStatChange(2, 3);
+    }
+
+    public void UpdateBloomedToGround()
+    {
+        UpdateStatChange(3, 0);
+    }
+
+    private void UpdateStatChange(int oldIndex, int newIndex)
+    {
+        stats[oldIndex]--;
+        stats[newIndex]++;
+    }
+    #endregion
 }

@@ -19,7 +19,7 @@ public class BoxLogic : MonoBehaviour
     }
 
     Renderer render;
-    GridHandler gridHandler;
+    public GridHandler gridHandler;
     //BoxStyle boxStyle;
 
     [SerializeField]
@@ -206,6 +206,7 @@ public class BoxLogic : MonoBehaviour
         SetActiveType(Type.Water);
         changing = false;
         SpreadWater();
+        gridHandler.UpdateGroundToWater();
         return true;
     }
 
@@ -252,9 +253,17 @@ public class BoxLogic : MonoBehaviour
 
     public void DestroyLocalPlant()
     {
+        if(plant.GetComponent<Flower>().GetState() == Flower.State.Bloom)
+        {
+            gridHandler.UpdateBloomedToGround();
+        }
+        else
+        {
+            gridHandler.UpdatePlantedToGround();
+        }
         plant.GetComponent<Flower>().DestroyPlant();
         plant = null;
-        UpdateStats();
+        // UpdateStats();
     }
 
     public bool isDry()
@@ -303,7 +312,7 @@ public class BoxLogic : MonoBehaviour
     {
         UpdateMaterial();
 
-        UpdateStats();
+        //UpdateStats();
 
         if(activeType != Type.Ground && previousType == Type.Ground)
         {
@@ -338,9 +347,11 @@ public class BoxLogic : MonoBehaviour
         return plant; 
     }
 
+    #region Neighbour Related Methods
+
     public void UpdateStats()
     {
-        gridHandler.UpdateStats();
+        gridHandler.UpdateAllStats();
     }
 
     public Transform GetRandomEligibleNeighbour(Flower flower)
@@ -411,4 +422,6 @@ public class BoxLogic : MonoBehaviour
     {
         return neighbours;
     }
+
+    #endregion
 }

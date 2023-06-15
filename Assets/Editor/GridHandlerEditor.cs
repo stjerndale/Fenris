@@ -14,10 +14,10 @@ public class GridHandlerEditor : Editor
         int[] stats = gridHandler.GetStats();
 
         EditorGUILayout.LabelField("Ground", gridHandler.GetStats()[0].ToString());
-        EditorGUILayout.LabelField("Dug", gridHandler.GetStats()[1].ToString());
+        EditorGUILayout.LabelField("Water", gridHandler.GetStats()[1].ToString());
         EditorGUILayout.LabelField("Seeds", gridHandler.GetStats()[2].ToString());
-        EditorGUILayout.LabelField("Leaves", gridHandler.GetStats()[3].ToString());
-        EditorGUILayout.LabelField("Blooms", gridHandler.GetStats()[4].ToString());
+        EditorGUILayout.LabelField("Blooms", gridHandler.GetStats()[3].ToString());
+        EditorGUILayout.LabelField("Unknown", gridHandler.GetStats()[4].ToString());
 
         Repaint();
     }
