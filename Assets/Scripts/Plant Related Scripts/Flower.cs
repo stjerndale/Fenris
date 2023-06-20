@@ -122,6 +122,8 @@ public class Flower : MonoBehaviour
             else if (previousState == State.Leaf)
             {
                 SetState(State.Bloom);
+                // trigger flower bloomed event
+                GameEvents.current.FlowerBloomed(flowerInfo);
                 box.gridHandler.UpdatePlantedToBloomed();
             }
         }

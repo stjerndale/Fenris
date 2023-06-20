@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace DS
 {
+    using DS.Data;
     using ScriptableObjects;
     using System;
+    using System.Linq;
 
     public class DSDialogue : MonoBehaviour
     {
@@ -38,9 +40,9 @@ namespace DS
             }
         }
 
-        public string NextDialogue()
+        public string NextDialogue(int choice = 0)
         {
-            currentDialogue = currentDialogue.Choices[0].NextDialogue;
+            currentDialogue = currentDialogue.Choices[choice].NextDialogue;
 
             if(currentDialogue == null )
             {
@@ -51,6 +53,16 @@ namespace DS
             //Debug.Log(currentDialogue.Text);
 
             return currentDialogue.Text;
+        }
+
+        public List<string> Choices()
+        {
+            List<string> choiceTexts = new List<string>();
+            foreach(DSDialogueChoiceData choice in currentDialogue.Choices)
+            {
+                choiceTexts.Add(choice.Text);
+            }
+            return choiceTexts;
         }
 
         internal string StartDialogue()

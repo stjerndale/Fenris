@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float hori;
     private float verti;
     private Vector3 direction;
+    private bool immobile;
 
     private GameObject groundTile; // the tile currently below the player
     private GameObject targetTile;
@@ -29,22 +30,30 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        immobile = false;
         SetGroundTile();
         targetTile = groundTile;
         inventory = transform.GetComponent<PlayerInventory>();
         sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
+        GameEvents.current.onImmobilizePlayer += SetImmobile;
     }
 
     void Update()
     {
+        if(immobile)
+        {
+            return;
+        }
+
         hori = Input.GetAxisRaw("Horizontal");
         verti = Input.GetAxisRaw("Vertical");
         direction = new Vector3(hori, 0f, verti);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        /* if (Input.GetKeyDown(KeyCode.Space))
         {
-            //rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
-        }
+            rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
+        }*/
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -90,6 +99,9 @@ public class PlayerController : MonoBehaviour
             bool success = boxC.PlantFlower(inventory.GetSelectedStack().flowerInformation);
             if (success)
             {
+                // trigger flower planted event
+                GameEvents.current.FlowerPlanted(inventory.GetSelectedStack().flowerInformation);
+
                 inventory.DecreaseSeedStack(inventory.selectedSeed);
             }
         }
@@ -165,6 +177,16 @@ public class PlayerController : MonoBehaviour
         {
             targetTile = groundTile;
         }
+    }
+
+    private void SetImmobile(bool immobility)
+    {
+        immobile = immobility;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.current.onImmobilizePlayer -= SetImmobile;
     }
 
 }

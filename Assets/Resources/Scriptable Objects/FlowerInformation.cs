@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FlowerInformation", order = 1)]
 public class FlowerInformation : ScriptableObject
 {
