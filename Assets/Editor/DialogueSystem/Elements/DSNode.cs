@@ -19,6 +19,7 @@ namespace DS.Elements
         public string DialogueName { get; set; }
         public List<DSChoiceSaveData> Choices { get; set; }
         public string Text { get; set; }
+        public string QuestID { get; set; }
         public DSDialogueType DialogueType { get; set; }
         public DSGroup Group { get; set; }
 
@@ -31,6 +32,7 @@ namespace DS.Elements
             DialogueName = nodeName;
             Choices = new List<DSChoiceSaveData>();
             Text = "Dialogue text.";
+            QuestID = "";
             graphView = dSGraphView;
 
             defaultBackgroundColor = new Color(29f / 255f, 29f / 255f, 30f / 255f);
@@ -107,8 +109,14 @@ namespace DS.Elements
                 "ds-node__quote-textfield"
                 );
 
+            TextField questID = DSElementUtility.CreateTextArea(QuestID, "Quest ID", callback =>
+            {
+                QuestID = callback.newValue;
+            });
+
             textFoldout.Add(textTextField);
             customDataContainer.Add(textFoldout);
+            customDataContainer.Add(questID);
             extensionContainer.Add(customDataContainer);
         }
 

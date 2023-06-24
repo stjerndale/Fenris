@@ -50,7 +50,10 @@ namespace DS
                 return "";
             }
 
-            //Debug.Log(currentDialogue.Text);
+            if(currentDialogue.QuestID != "")
+            {
+                Debug.Log(currentDialogue.QuestID);
+            }
 
             return currentDialogue.Text;
         }

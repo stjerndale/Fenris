@@ -21,6 +21,7 @@ MonoBehaviour:
   - <ID>k__BackingField: 665e94e1-69ba-45da-b6cd-33ee4adc6094
     <Name>k__BackingField: 2
     <Text>k__BackingField: Is this your first time here?
+    <QuestID>k__BackingField: 
     <Choices>k__BackingField:
     - <Text>k__BackingField: Yes
       <NodeID>k__BackingField: d8f1045d-03a7-4d82-a38d-d84ca6489189
@@ -32,6 +33,7 @@ MonoBehaviour:
   - <ID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
     <Name>k__BackingField: 4
     <Text>k__BackingField: Goodbye!
+    <QuestID>k__BackingField: 
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 
@@ -41,6 +43,7 @@ MonoBehaviour:
   - <ID>k__BackingField: b206c67b-ee94-4a9d-9713-796674e41068
     <Name>k__BackingField: 1
     <Text>k__BackingField: Greetings!
+    <QuestID>k__BackingField: 
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 665e94e1-69ba-45da-b6cd-33ee4adc6094
@@ -50,6 +53,7 @@ MonoBehaviour:
   - <ID>k__BackingField: d8f1045d-03a7-4d82-a38d-d84ca6489189
     <Name>k__BackingField: 3
     <Text>k__BackingField: Then Welcome!
+    <QuestID>k__BackingField: 1
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
@@ -59,6 +63,7 @@ MonoBehaviour:
   - <ID>k__BackingField: 11b7f5b8-ed83-4eae-a14f-3091c5c76a53
     <Name>k__BackingField: 5
     <Text>k__BackingField: Then Welcome back!
+    <QuestID>k__BackingField: 
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812

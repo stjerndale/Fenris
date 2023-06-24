@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: 3
   <Text>k__BackingField: Then Welcome!
+  <QuestID>k__BackingField: 1
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 3b1eda4fb8738f042a5d9d185645bea5, type: 2}

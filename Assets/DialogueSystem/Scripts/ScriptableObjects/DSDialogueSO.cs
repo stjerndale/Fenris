@@ -17,6 +17,10 @@ namespace DS.ScriptableObjects
         public string Text { get; set; }
 
         [field: SerializeField]
+        [field: TextArea()]
+        public string QuestID { get; set; }
+
+        [field: SerializeField]
         public List<DSDialogueChoiceData> Choices { get; set; }
 
         [field: SerializeField]
@@ -25,10 +29,11 @@ namespace DS.ScriptableObjects
         [field: SerializeField]
         public bool IsStartingDialogue { get; set; }
 
-        public void Initialize(string dialogueName, string text, List<DSDialogueChoiceData> choices, DSDialogueType dialogueType, bool isStartingDialogue)
+        public void Initialize(string dialogueName, string text, string questID, List<DSDialogueChoiceData> choices, DSDialogueType dialogueType, bool isStartingDialogue)
         {
             DialogueName = dialogueName;
             Text = text;
+            QuestID = questID;
             Choices = choices;
             DialogueType = dialogueType;
             IsStartingDialogue = isStartingDialogue;

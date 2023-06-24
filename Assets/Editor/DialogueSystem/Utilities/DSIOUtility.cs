@@ -155,6 +155,7 @@ namespace DS.Utilities
                 Name = node.DialogueName,
                 Choices = choices,
                 Text = node.Text,
+                QuestID = node.QuestID,
                 GroupID = node.Group?.ID,
                 DialogueType = node.DialogueType,
                 Position = node.GetPosition().position
@@ -180,6 +181,7 @@ namespace DS.Utilities
             dialogue.Initialize(
                 node.DialogueName,
                 node.Text,
+                node.QuestID,
                 ConvertNodeChoicesToDialogueChoices(node.Choices),
                 node.DialogueType,
                 node.IsStartingNode()
@@ -314,6 +316,7 @@ namespace DS.Utilities
                 node.ID = nodeData.ID;
                 node.Choices = choices;
                 node.Text = nodeData.Text;
+                node.QuestID = nodeData.QuestID;
 
                 node.Draw();
                 graphView.AddElement(node);
