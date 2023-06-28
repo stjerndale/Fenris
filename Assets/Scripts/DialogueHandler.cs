@@ -18,8 +18,9 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] private Button[] choiceButtons;
     [SerializeField] private TMP_Text[] choiceTexts;
 
-    private bool dialogueOpened;
+    [SerializeField] QuestGiver questGiver;
 
+    private bool dialogueOpened;
 
     private void Start()
     {
@@ -52,16 +53,22 @@ public class DialogueHandler : MonoBehaviour
     {
         ResetButtons();
 
-        string nextText = dialogueSystem.NextDialogue(choice);
-        if (nextText == "")
+        string[] nextDialogue = dialogueSystem.NextDialogue(choice);
+        if (nextDialogue[0] == "")
         {
             EndDialogue();
         }
         else
         {
-            text.text = nextText;
+            text.text = nextDialogue[0];
             UpdateButtons();
             StartCoroutine(Cooldown());
+        }
+
+        if (nextDialogue[1] != "")
+        {
+            // Dialogue is triggering a quest!
+            TriggerQuest(nextDialogue[1]);
         }
     }
 
@@ -106,5 +113,10 @@ public class DialogueHandler : MonoBehaviour
         dialogueOpened = false;
         yield return new WaitForSeconds(0.3f);
         dialogueOpened = true;
+    }
+
+    private void TriggerQuest(string questID)
+    {
+        questGiver.GiveQuest(questID);
     }
 }

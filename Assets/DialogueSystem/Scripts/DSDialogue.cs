@@ -40,22 +40,17 @@ namespace DS
             }
         }
 
-        public string NextDialogue(int choice = 0)
+        public string[] NextDialogue(int choice = 0)
         {
             currentDialogue = currentDialogue.Choices[choice].NextDialogue;
 
             if(currentDialogue == null )
             {
                 currentDialogue = dialogue;
-                return "";
+                return new string[] { "" , ""};
             }
 
-            if(currentDialogue.QuestID != "")
-            {
-                Debug.Log(currentDialogue.QuestID);
-            }
-
-            return currentDialogue.Text;
+            return new string[] { currentDialogue.Text, currentDialogue.QuestID};
         }
 
         public List<string> Choices()
@@ -68,7 +63,7 @@ namespace DS
             return choiceTexts;
         }
 
-        internal string StartDialogue()
+        public string StartDialogue()
         {
             return currentDialogue.Text;
         }
