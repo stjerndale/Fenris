@@ -18,6 +18,9 @@ namespace DS.Data.Save
         [field: SerializeField]  
         public string Text { get; set; }
 
+        [field: SerializeField]
+        public string QuestID { get; set; }
+
         [field: SerializeField]  
         public List<DSChoiceSaveData> Choices { get; set; }
 

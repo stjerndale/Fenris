@@ -93,6 +93,8 @@ public class PlayerController : MonoBehaviour
 
     private void PlantSeed()
     {
+        if(targetTile == null) { return; }
+
         BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
         if (inventory.GetStackSize() > inventory.selectedSeed)
         {
@@ -109,14 +111,14 @@ public class PlayerController : MonoBehaviour
 
     private void WaterPlant()
     {
-        BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
-        boxC.GoWet();
+        BoxLogic boxC = targetTile?.GetComponent<BoxLogic>();
+        boxC?.GoWet();
     }
 
     private void DigGround()
     {
-        BoxLogic boxC = targetTile.GetComponent<BoxLogic>();
-        boxC.GetDug(transform);
+        BoxLogic boxC = targetTile?.GetComponent<BoxLogic>();
+        boxC?.GetDug(transform);
     }
 
     private void SetGroundTile()
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         LayerMask mask = LayerMask.GetMask("Ground");
 
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 4f, mask))
+        if (Physics.Raycast(new Vector3(transform.position.x, 1f, transform.position.z), Vector3.down, out hit, 4f, mask))
         {
             //groundTile?.GetComponent<SelectionHighlight>().DeSelect(); // deselect the old one
             groundTile = hit.collider.gameObject;
@@ -172,6 +174,12 @@ public class PlayerController : MonoBehaviour
                 targetTile = hit.collider.gameObject;
                 targetTile.GetComponent<SelectionHighlight>().Select(); // select the new one
             }
+            else
+            {
+                targetTile?.GetComponent<SelectionHighlight>().DeSelect(); // deselect the old one
+                targetTile = groundTile;
+                targetTile?.GetComponent<SelectionHighlight>().Select(); // select the new one
+            }
         }
         if(targetTile == null)
         {
@@ -182,6 +190,7 @@ public class PlayerController : MonoBehaviour
     private void SetImmobile(bool immobility)
     {
         immobile = immobility;
+        direction = Vector3.zero;
     }
 
     private void OnDisable()

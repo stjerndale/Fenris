@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a95cbdf65f849246acc7a3ac5a3afd8, type: 3}
+  m_Name: Quest1
+  m_EditorClassIdentifier: 
+  Goals:
+  - {fileID: 11400000, guid: 43f88a83a5f576d49b2d3c4f1f950c9b, type: 2}
+  - {fileID: 11400000, guid: 5d94c680b55219e41aa3f8b5d7987d54, type: 2}
+  QuestID: 1
+  <description>k__BackingField: Plant a blueberry bush and help two tulips bloom.
+  NPC: 
