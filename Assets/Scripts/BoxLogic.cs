@@ -347,6 +347,14 @@ public class BoxLogic : MonoBehaviour
         return plant; 
     }
 
+    public void BouncePlant()
+    {
+        if (plant != null)
+        {
+            plant.GetComponent<Flower>().Bounce();
+        }
+    }
+
     #region Neighbour Related Methods
 
     public void UpdateStats()

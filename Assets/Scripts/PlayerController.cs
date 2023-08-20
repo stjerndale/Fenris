@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
         {
             //groundTile?.GetComponent<SelectionHighlight>().DeSelect(); // deselect the old one
             groundTile = hit.collider.gameObject;
+            groundTile.GetComponent<BoxLogic>().BouncePlant();
             //groundTile.GetComponent<SelectionHighlight>().Select(); // select the new one
         }
     }
