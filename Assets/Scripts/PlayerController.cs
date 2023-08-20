@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Rigidbody rb;
     SpriteRenderer sprite;
+    Animator animator;
 
     private float hori;
     private float verti;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         targetTile = groundTile;
         inventory = transform.GetComponent<PlayerInventory>();
         sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
 
         GameEvents.current.onImmobilizePlayer += SetImmobile;
     }
@@ -87,7 +89,13 @@ public class PlayerController : MonoBehaviour
                 sprite.flipX = false;
             }
 
+            animator.Play("DogTrot");
+
             SetGroundTile(); // update groundTile when moving
+        }
+        else
+        {
+            animator.Play("DogIdle");
         }
     }
 
