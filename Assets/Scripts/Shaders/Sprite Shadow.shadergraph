@@ -83,9 +83,6 @@
         },
         {
             "m_Id": "fde71aa9ce1b44bc8aea8e22e302235b"
-        },
-        {
-            "m_Id": "22a7f7d8e81a4245b810b80254ef1974"
         }
     ],
     "m_GroupDatas": [],
@@ -117,20 +114,6 @@
                     "m_Id": "75800ce20daf4653ba1b1673ed144ee7"
                 },
                 "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "22a7f7d8e81a4245b810b80254ef1974"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "53b5d2e876b546e0bd073cd7e814f6e9"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -613,48 +596,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
-    "m_ObjectId": "22a7f7d8e81a4245b810b80254ef1974",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "WorldBending",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 28.999982833862306,
-            "y": -502.0,
-            "width": 208.00001525878907,
-            "height": 278.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "7323ae851f994c4dbaf7ca764ed2f296"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"b3d32c4671f426742bdc4fabf845a64c\",\n        \"type\": 3\n    }\n}",
-    "m_PropertyGuids": [
-        "86692798-5b46-4278-878d-ee26cb0d4f0f"
-    ],
-    "m_PropertyIds": [
-        -307168110
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
 }
 
 {
@@ -1224,29 +1165,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.NormalTS"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "7323ae851f994c4dbaf7ca764ed2f296",
-    "m_Id": 1,
-    "m_DisplayName": "Position",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Position",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": []
 }
 
 {
