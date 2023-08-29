@@ -106,9 +106,6 @@
             "m_Id": "150e69a08af24997ade8647eec920d88"
         },
         {
-            "m_Id": "4765605c21fa4551a2c7dc2ee79cbe79"
-        },
-        {
             "m_Id": "6ab2ab6927554902bfbc5bb1242359d1"
         },
         {
@@ -177,20 +174,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "f397cdb7a3514aff824be427a48c964a"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "4765605c21fa4551a2c7dc2ee79cbe79"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "a0d981324f3c4622a06476dc233df3c0"
                 },
                 "m_SlotId": 0
             }
@@ -1269,48 +1252,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
-    "m_ObjectId": "4765605c21fa4551a2c7dc2ee79cbe79",
-    "m_Group": {
-        "m_Id": "857604d6d0ad453d947bd0781142cbfd"
-    },
-    "m_Name": "WorldBending",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -616.0,
-            "y": -1228.0,
-            "width": 208.00003051757813,
-            "height": 278.00006103515627
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "d1c979aa2c3e41e5872d7d6f01a2c211"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"b3d32c4671f426742bdc4fabf845a64c\",\n        \"type\": 3\n    }\n}",
-    "m_PropertyGuids": [
-        "86692798-5b46-4278-878d-ee26cb0d4f0f"
-    ],
-    "m_PropertyIds": [
-        -307168110
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "482e2c89c4f244e0aae7f5c15f76aae8",
     "m_Group": {
@@ -1721,7 +1662,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "857604d6d0ad453d947bd0781142cbfd",
-    "m_Title": "Outline & World Bending",
+    "m_Title": "Outline",
     "m_Position": {
         "x": -1380.0,
         "y": -1287.0
@@ -2671,29 +2612,6 @@
         "e32": 0.0,
         "e33": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "d1c979aa2c3e41e5872d7d6f01a2c211",
-    "m_Id": 1,
-    "m_DisplayName": "Position",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Position",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": []
 }
 
 {

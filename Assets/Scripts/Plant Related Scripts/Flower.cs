@@ -274,4 +274,16 @@ public class Flower : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         animator.Play("Default");
     }
+
+    public void Bounce()
+    {
+        animator.Play("Plant_Pop");
+        StartCoroutine("StopAnimationAfterDelay", 1);
+    }
+
+    private IEnumerator StopAnimationAfterDelay(int n)
+    {
+        yield return new WaitForSeconds(n);
+        animator.Play("Default");
+    }
 }
