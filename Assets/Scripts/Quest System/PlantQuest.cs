@@ -57,6 +57,7 @@ public class PlantQuest
             {
                 progress[i]++;
                 UpdateGoalComplete(i);
+                GameEvents.current.QuestGoalUpdated(questInfo.QuestID);
             }
         }
     }
@@ -70,6 +71,7 @@ public class PlantQuest
             {
                 progress[i]++;
                 UpdateGoalComplete(i);
+                GameEvents.current.QuestGoalUpdated(questInfo.QuestID);
             }
         }
     }
@@ -80,6 +82,11 @@ public class PlantQuest
         {
             UpdateQuestComplete();
         }
+    }
+
+    public int GetProgress(int index)
+    {
+        return progress[index];
     }
 
     public void ActivateGoals()

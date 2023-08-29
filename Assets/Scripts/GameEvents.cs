@@ -44,5 +44,11 @@ public class GameEvents : MonoBehaviour
     {
         onFlowerBloomed?.Invoke(info);
     }
+
+    public event Action<String> onQuestGoalUpdated;
+    public void QuestGoalUpdated(String questID)
+    {
+        onQuestGoalUpdated?.Invoke(questID);
+    }
     #endregion
 }
