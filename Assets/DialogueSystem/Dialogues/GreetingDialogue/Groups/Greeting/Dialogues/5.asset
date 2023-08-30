@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: 5
-  <Text>k__BackingField: Then Welcome back!
+  <Text>k__BackingField: Okay.
   <QuestID>k__BackingField: 
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue

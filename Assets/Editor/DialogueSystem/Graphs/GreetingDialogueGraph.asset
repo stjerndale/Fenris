@@ -16,30 +16,8 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
     <Name>k__BackingField: Greeting
-    <Position>k__BackingField: {x: 364, y: 104}
+    <Position>k__BackingField: {x: 364, y: -2}
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: 665e94e1-69ba-45da-b6cd-33ee4adc6094
-    <Name>k__BackingField: 2
-    <Text>k__BackingField: Is this your first time here?
-    <QuestID>k__BackingField: 
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Yes
-      <NodeID>k__BackingField: d8f1045d-03a7-4d82-a38d-d84ca6489189
-    - <Text>k__BackingField: No
-      <NodeID>k__BackingField: 11b7f5b8-ed83-4eae-a14f-3091c5c76a53
-    <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
-    <DialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: 684, y: 175}
-  - <ID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
-    <Name>k__BackingField: 4
-    <Text>k__BackingField: Goodbye!
-    <QuestID>k__BackingField: 
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
-    <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1622, y: 199}
   - <ID>k__BackingField: b206c67b-ee94-4a9d-9713-796674e41068
     <Name>k__BackingField: 1
     <Text>k__BackingField: Greetings!
@@ -50,26 +28,48 @@ MonoBehaviour:
     <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 389, y: 189}
+  - <ID>k__BackingField: 665e94e1-69ba-45da-b6cd-33ee4adc6094
+    <Name>k__BackingField: 2
+    <Text>k__BackingField: Would you like a quest?
+    <QuestID>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Yes
+      <NodeID>k__BackingField: d8f1045d-03a7-4d82-a38d-d84ca6489189
+    - <Text>k__BackingField: No
+      <NodeID>k__BackingField: 11b7f5b8-ed83-4eae-a14f-3091c5c76a53
+    <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 681, y: 187}
   - <ID>k__BackingField: d8f1045d-03a7-4d82-a38d-d84ca6489189
     <Name>k__BackingField: 3
-    <Text>k__BackingField: Then Welcome!
+    <Text>k__BackingField: Then here you go!
     <QuestID>k__BackingField: 1
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
     <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1128, y: 163}
+    <Position>k__BackingField: {x: 1361, y: 57}
   - <ID>k__BackingField: 11b7f5b8-ed83-4eae-a14f-3091c5c76a53
     <Name>k__BackingField: 5
-    <Text>k__BackingField: Then Welcome back!
+    <Text>k__BackingField: Okay.
     <QuestID>k__BackingField: 
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
     <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1128, y: 485}
+    <Position>k__BackingField: {x: 1352, y: 479}
+  - <ID>k__BackingField: f98b9710-26c4-4379-bed7-0dfcfc4e6812
+    <Name>k__BackingField: 4
+    <Text>k__BackingField: Byebye!
+    <QuestID>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: a4ebe236-4906-4963-89bf-6fc2e87a53ca
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1688, y: 199}
   <OldGroupNames>k__BackingField:
   - Greeting
   <OldUngroupedNodeNames>k__BackingField: []
@@ -77,8 +77,8 @@ MonoBehaviour:
     list:
     - Key: Greeting
       Value:
-      - 2
-      - 4
       - 1
+      - 2
       - 3
       - 5
+      - 4

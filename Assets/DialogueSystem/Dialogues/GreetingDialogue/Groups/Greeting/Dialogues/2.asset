@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: 2
-  <Text>k__BackingField: Is this your first time here?
+  <Text>k__BackingField: Would you like a quest?
   <QuestID>k__BackingField: 
   <Choices>k__BackingField:
   - <Text>k__BackingField: Yes
