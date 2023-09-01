@@ -13,13 +13,29 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private Color dawn;
     [SerializeField] private Color dusk;
     [SerializeField] private Color night;
-    
+    private Gradient gradient;
+
 
     // Start is called before the first frame update
     void Start()
     {
         sunLight = sun.GetComponent<Light>();
         divider = 360f / secondsPerDygn;
+
+        // prepare the color gradient
+        gradient = new Gradient();
+        var colors = new GradientColorKey[5];
+        colors[0] = new GradientColorKey(day, 0.0f);
+        colors[1] = new GradientColorKey(dusk, 0.20f);
+        colors[2] = new GradientColorKey(night, 0.60f);
+        colors[3] = new GradientColorKey(dawn, 0.8f);
+        colors[4] = new GradientColorKey(day, 1.0f);
+
+        var alphas = new GradientAlphaKey[2];
+        alphas[0] = new GradientAlphaKey(1.0f, 0f);
+        alphas[1] = new GradientAlphaKey(1.0f, 1f);
+
+        gradient.SetKeys(colors, alphas);
     }
 
     // Update is called once per frame
@@ -31,25 +47,9 @@ public class WeatherManager : MonoBehaviour
         // zenith at 0d
 
         //sun.transform.position = new Vector3(sun.transform.position.x, Mathf.Cos(yrot * Mathf.PI) * 4, sun.transform.position.z);
-        Debug.Log(sun.transform.eulerAngles.y / 360);
 
-        float t = Mathf.Abs( sun.transform.eulerAngles.y);
+        float t = sun.transform.eulerAngles.y / 360f;
 
-        if (sun.transform.eulerAngles.y > 0 && sun.transform.eulerAngles.y < 90)
-        {
-            sunLight.color = Color.Lerp(dusk, night, t / 90);
-        }
-        else if (sun.transform.eulerAngles.y > 90 && sun.transform.eulerAngles.y < 180)
-        {
-            sunLight.color = Color.Lerp(night, dawn, (t - 90) / 90);
-        }
-        else if (sun.transform.eulerAngles.y > 180 && sun.transform.eulerAngles.y < 270)
-        {
-            sunLight.color = Color.Lerp(dawn, day, (t - 180) / 90);
-        }
-        else if (sun.transform.eulerAngles.y > 270)
-        {
-            sunLight.color = Color.Lerp(day, dusk, (t - 270) / 90);
-        }
+        sunLight.color = gradient.Evaluate(t);
     }
 }
